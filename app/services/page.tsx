@@ -7,16 +7,16 @@ import { Reveal } from "@/components/animations";
 export const metadata: Metadata = {
   title: "Our services",
   description:
-    "Seven connected disciplines. Brand strategy, social media, performance, film, web, creators and SEO.",
+    "SEO, website redesign, Google and Meta ads, social media management, branding and content. Digital marketing services with a clear purpose.",
 };
 export default function Page() {
   return (
     <>
       <PageHeading
-        label="WHAT WE DO"
-        title="Built for"
-        accent="the whole picture."
-        description="No silos. No handoffs into the void. Just the right mix of minds, making every part of your brand work harder together."
+        label="DIGITAL MARKETING SERVICES"
+        title="Get found."
+        accent="Get chosen."
+        description="From fixing your website to reaching the right audience, we build a practical mix of services around your business goals."
       />
       <section className="service-panels">
         {services.map((s, i) => (

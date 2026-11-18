@@ -28,7 +28,7 @@ Do not run the development server and production build simultaneously: both use 
 app/
   page.tsx                     Homepage
   layout.tsx                   Fonts, metadata, navigation, app shell
-  about/page.tsx               Story, principles and illustrative team
+  about/page.tsx               Story, principles and digital capabilities
   services/page.tsx            Seven disciplines
   services/[slug]/page.tsx     Service detail
   work/page.tsx                Filterable portfolio
@@ -47,7 +47,7 @@ components/
   animations.tsx               SmoothScroll, Cursor, Preloader, PageTransition,
                                Reveal, SplitText, Magnetic, Counter, Marquee
   home.tsx                     Homepage, ProjectCard, ParallaxImage,
-                               HorizontalScroll and testimonials
+                               HorizontalScroll and service FAQs
   hero-scene.tsx               Lazy-loaded Three.js hero knot
   layout.tsx                   Navigation, fullscreen menu, CTA and footer
   page-heading.tsx             Shared interior page heading
@@ -65,8 +65,8 @@ styles/globals.css             Tailwind import, design tokens and styles
 - Replace OFFSCRIPT with the agency name, wordmark and favicon.
 - Update palette and spacing tokens in `styles/globals.css`.
 - Edit services, projects, articles and team profiles in `data/content.ts`.
-- Replace stock imagery with owned, licensed campaign assets. Images currently use Unsplash URLs through Next Image. For production, store final files in `public/images` and update image references.
-- Replace all concept brands, fictional team members, sample testimonials and illustrative campaign targets with approved content. Keep the disclosure until this is complete.
+- Digital marketing visuals are original local SVG mockups in `public/images`. Replace or adapt these when real client work is available.
+- Replace illustrative portfolio examples with approved real client case studies when available. No invented team, testimonials or results are presented.
 - Update the location, contact wording, careers availability and any real social profile links. No fabricated social links or active vacancies are included.
 - Set `NEXT_PUBLIC_SITE_URL` to your real HTTPS domain for sitemap, robots and metadata.
 - Connect Resend: set `RESEND_API_KEY`, `CONTACT_FROM` (a verified sending domain) and `CONTACT_TO` in server environment variables.
@@ -90,7 +90,7 @@ The contact route uses plain-text email, bounded fields and a honeypot. It repor
 
 ## Deliberate scope notes
 
-This implementation uses a restrained route fade/slide, snap-on-release draggable testimonials (no paid inertia extension), CSS image treatments, and a lightweight decorative Three.js knot. It does not claim every advanced effect in the aspirational brief, award recognition, measured Lighthouse scores, or verified client outcomes. Content stays readable if animations are disabled.
+This implementation uses a restrained route fade/slide, Custom SVG marketing mockups, and a lightweight decorative Three.js knot. It does not claim every advanced effect in the aspirational brief, award recognition, measured Lighthouse scores, or verified client outcomes. Content stays readable if animations are disabled.
 
 Konami easter egg: ↑ ↑ ↓ ↓ ← → ← → B A toggles a colour shift on the homepage.
 

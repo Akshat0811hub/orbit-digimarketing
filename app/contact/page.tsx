@@ -2,30 +2,30 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact-form";
 import { PageHeading } from "@/components/page-heading";
 export const metadata: Metadata = {
-  title: "Let’s talk",
+  title: "Discuss your digital marketing goals",
   description:
-    "Have an ambition, a challenge or a wild idea? Start a conversation with OFFSCRIPT.",
+    "Talk to OFFSCRIPT about SEO, website redesign, paid advertising and social media. Share your website and business goals to start the conversation.",
 };
 export default function Page() {
   return (
     <>
       <PageHeading
-        label="BIG IDEAS START WITH A HELLO"
-        title="You bring the what if."
-        accent="We’ll bring the why not."
+        label="LET’S TALK ABOUT YOUR BUSINESS"
+        title="Your next chapter."
+        accent="Starts right here."
       />
       <section className="contact-layout section-pad">
         <aside>
-          <span className="eyebrow">LET’S CONNECT</span>
+          <span className="eyebrow">A CLEAR STARTING POINT</span>
           <h2>
-            Good things
+            What’s holding
             <br />
-            start here.
+            growth back?
           </h2>
           <p>
-            Tell us what you have in mind.
+            Share your website and the goals you’re working towards.
             <br />
-            We’ll figure out the next move together.
+            We’ll discuss where SEO, a redesign or better campaigns could help.
           </p>
           <div className="location-block">
             <div className="map-art">
@@ -38,7 +38,7 @@ export default function Page() {
             </div>
             <h3>Mumbai, India</h3>
             <p>
-              Local roots. Global curiosity.
+              Digital marketing, wherever you work.
               <br />
               Remote collaborations welcome.
             </p>

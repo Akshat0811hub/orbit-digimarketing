@@ -36,14 +36,13 @@ export default async function Page({
           <span>
             {p.category} / {p.year}
           </span>
-          <span>CONCEPT PROJECT</span>
+          <span>DEMONSTRATION CONCEPT</span>
         </div>
         <h1>{p.name}</h1>
         <p>{p.subtitle}</p>
       </section>
       <div className="case-hero">
         <ParallaxImage src={photo(p.image)} alt={p.description} priority />
-        <strong>{p.label}</strong>
       </div>
       <section className="case-intro section-pad">
         <span className="eyebrow">THE BIG PICTURE</span>
@@ -53,32 +52,32 @@ export default async function Page({
         <Reveal>
           <span className="eyebrow">01 / THE CHALLENGE</span>
           <h2>
-            A different
+            Start with
             <br />
-            starting point.
+            the problem.
           </h2>
           <p>{p.challenge}</p>
         </Reveal>
         <Reveal>
           <span className="eyebrow">02 / OUR APPROACH</span>
           <h2>
-            One clear idea.
+            Connect the plan
             <br />
-            Every touchpoint.
+            to the work.
           </h2>
           <p>{p.solution}</p>
         </Reveal>
       </section>
       <section className="case-results">
-        <span className="eyebrow">03 / ILLUSTRATIVE CAMPAIGN TARGETS</span>
+        <span className="eyebrow">03 / PROPOSED DELIVERABLES</span>
         <div>
           {p.results.map((r) => (
             <h3 key={r}>{r}</h3>
           ))}
         </div>
         <p>
-          Sample metrics for this fictional case study; not verified client
-          outcomes.
+          This concept illustrates a proposed scope of work. It is not a client
+          case study or a claim of achieved results.
         </p>
       </section>
       <section className="case-gallery">
@@ -92,7 +91,7 @@ export default async function Page({
         <div className="gallery-photo">
           <ParallaxImage
             src={photo(p.image)}
-            alt={`${p.name} campaign imagery`}
+            alt={`${p.name} digital marketing concept`}
           />
         </div>
       </section>

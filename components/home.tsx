@@ -3,10 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { ArrowDown, ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
-import { gsap, ScrollTrigger, Draggable } from "@/lib/gsap";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Search,
+  Globe,
+  Target,
+  BarChart3,
+  Check,
+  Plus,
+} from "lucide-react";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { services, projects, photo } from "@/data/content";
-import { Reveal, Magnetic, Marquee, Counter, SplitText } from "./animations";
+import { Reveal, Magnetic, Marquee, SplitText } from "./animations";
 import { CTA } from "./layout";
 const HeroScene = dynamic(() => import("./hero-scene"), { ssr: false });
 export function ParallaxImage({
@@ -43,28 +52,18 @@ export function ProjectCard({
   return (
     <Link
       href={`/work/${project.slug}`}
-      className={`project-card project-${project.slug}`}
+      className={`project-card digital-project project-${project.slug}`}
       data-cursor="VIEW"
     >
       <div className="project-visual" style={{ background: project.color }}>
         <ParallaxImage src={photo(project.image)} alt={project.subtitle} />
-        <div className="project-art">
-          <small>
-            {project.category.toUpperCase()} / {project.year}
-          </small>
-          <strong>{project.name}</strong>
-          <span>{project.label}</span>
-        </div>
         <span className="project-arrow">
           <ArrowUpRight />
         </span>
       </div>
       <div className="project-caption">
         <div>
-          <h3>
-            {project.name.toLowerCase()}
-            <sup>®</sup>
-          </h3>
+          <h3>{project.name.toLowerCase()}</h3>
           <p>{project.subtitle}</p>
         </div>
         <span>
@@ -104,28 +103,28 @@ export function HorizontalScroll() {
       <div className="section-heading">
         <span className="eyebrow">04 / THE WAY WE WORK</span>
         <h2>
-          Good chaos.
+          Clear goals.
           <br />
-          <em>Great process.</em>
+          <em>A practical plan.</em>
         </h2>
       </div>
       <div ref={track} className="process-track">
         {[
           [
-            "Listen",
-            "We ask the uncomfortable questions. Dig into your audience. Find the real opportunity.",
+            "Audit",
+            "We review your website, search visibility, competitors and current campaigns to find what needs attention.",
           ],
           [
-            "Think",
-            "A clear point of view. A shared ambition. A strategy that gives the wild ideas a direction.",
+            "Plan",
+            "We agree on priorities, channels, deliverables and the measures that matter to your business.",
           ],
           [
-            "Make",
-            "Designers, strategists and makers in one room. Building, breaking and making it better.",
+            "Launch",
+            "We improve the website, create the content and set up your campaigns with tracking in place.",
           ],
           [
-            "Move",
-            "We launch, learn and keep pushing. Because great work is never a set-and-forget thing.",
+            "Optimise",
+            "We review enquiries, traffic and campaign data, then refine the work with clear monthly reporting.",
           ],
         ].map(([t, d], i) => (
           <article key={t}>
@@ -142,99 +141,54 @@ export function HorizontalScroll() {
     </section>
   );
 }
-function Testimonials() {
-  const track = useRef<HTMLDivElement>(null),
-    wrap = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
-  useLayoutEffect(() => {
-    if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
-    const ctx = gsap.context(() => {
-      Draggable.create(track.current, {
-        type: "x",
-        bounds: wrap.current,
-        edgeResistance: 0.8,
-        onDragEnd() {
-          const width = wrap.current!.clientWidth;
-          const index = Math.max(0, Math.min(2, Math.round(-this.x / width)));
-          setActive(index);
-          gsap.to(track.current, {
-            x: -index * width,
-            duration: 0.55,
-            ease: "power3.out",
-          });
-        },
-      });
-    });
-    return () => ctx.revert();
-  }, []);
-  const go = (n: number) => {
-    setActive(n);
-    gsap.to(track.current, {
-      x: -n * (wrap.current?.clientWidth ?? 0),
-      duration: 0.5,
-    });
-  };
+function GrowthQuestions() {
   return (
-    <section className="testimonial-section">
-      <span className="eyebrow">
-        05 / THE FEELING IS MUTUAL · SAMPLE TESTIMONIALS
-      </span>
-      <div className="testimonial-window" ref={wrap} data-cursor="DRAG">
-        <div className="testimonial-track" ref={track}>
-          {[
-            [
-              "They didn’t just understand our brand. They saw what it could become.",
-              "Riya Kapoor",
-              "Founder, Velocity",
-            ],
-            [
-              "The kind of creative partner that makes you a little braver.",
-              "Arjun Sethi",
-              "Co-founder, After Hours",
-            ],
-            [
-              "Thoughtful from the first conversation to the very last detail.",
-              "Neha Anand",
-              "Director, Form & Field",
-            ],
-          ].map(([quote, name, role]) => (
-            <figure key={name}>
-              <span className="quote-mark">“</span>
-              <blockquote>{quote}</blockquote>
-              <figcaption>
-                <span className="avatar">
-                  {name
-                    .split(" ")
-                    .map((s) => s[0])
-                    .join("")}
-                </span>
-                <div>
-                  {name}
-                  <small>{role}</small>
-                </div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+    <section className="growth-questions section-pad">
+      <div>
+        <span className="eyebrow">05 / BEFORE WE GET STARTED</span>
+        <h2>
+          Good questions.
+          <br />
+          <em>Clear answers.</em>
+        </h2>
+        <p>
+          Not sure where to start? We’ll help you identify the right first step.
+        </p>
+        <Link className="text-link" href="/contact">
+          Talk about your business <ArrowUpRight size={18} />
+        </Link>
       </div>
-      <div className="slider-controls">
-        <span>
-          0{active + 1} <span>/ 03</span>
-        </span>
-        <div>
-          <button
-            aria-label="Previous testimonial"
-            onClick={() => go((active + 2) % 3)}
-          >
-            <ArrowLeft />
-          </button>
-          <button
-            aria-label="Next testimonial"
-            onClick={() => go((active + 1) % 3)}
-          >
-            <ArrowRight />
-          </button>
-        </div>
+      <div className="faq-list">
+        {[
+          [
+            "Can you redesign our existing website?",
+            "Yes. We review your current site, keep what works and redesign the experience around your services, mobile visitors and enquiry journey. We plan redirects and preserve valuable content when URLs change.",
+          ],
+          [
+            "Do you offer SEO as a standalone service?",
+            "Yes. SEO can be a focused engagement covering technical fixes, on-page content and local search, or part of a wider website and marketing plan. The scope starts with an audit.",
+          ],
+          [
+            "Can you manage Google Ads and Meta Ads?",
+            "Yes. We help with campaign structure, audience research, ad creative, landing pages and conversion tracking. Media spend and our management scope are agreed separately.",
+          ],
+          [
+            "How will we know what is working?",
+            "We agree on useful measures before launch: qualified enquiries, conversion rate, relevant search traffic and campaign costs. Reporting explains what changed and what we recommend next.",
+          ],
+          [
+            "How soon can we expect results?",
+            "Timelines depend on your starting point, competition, budget and scope. Paid campaigns can generate data after launch; SEO and content need sustained work. We set realistic milestones rather than guarantee rankings or leads.",
+          ],
+        ].map(([q, a]) => (
+          <details key={q}>
+            <summary>
+              {q}
+              <Plus size={18} />
+            </summary>
+            <p>{a}</p>
+          </details>
+        ))}
       </div>
     </section>
   );
@@ -301,25 +255,23 @@ export default function Home() {
             scrub: 1,
           },
         });
-        gsap.utils
-          .toArray<HTMLElement>(".project-visual img")
-          .forEach((img) =>
-            gsap.fromTo(
-              img,
-              { yPercent: -5, scale: 1.12 },
-              {
-                yPercent: 5,
-                scale: 1.12,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: img.parentElement,
-                  start: "top bottom",
-                  end: "bottom top",
-                  scrub: 1,
-                },
+        gsap.utils.toArray<HTMLElement>(".project-visual img").forEach((img) =>
+          gsap.fromTo(
+            img,
+            { yPercent: -5, scale: 1.12 },
+            {
+              yPercent: 5,
+              scale: 1.12,
+              ease: "none",
+              scrollTrigger: {
+                trigger: img.parentElement,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
               },
-            ),
-          );
+            },
+          ),
+        );
       });
     }, root);
     return () => ctx.revert();
@@ -329,92 +281,143 @@ export default function Home() {
       <section className="hero">
         <div className="hero-kicker">
           <span>
-            <i className="status-dot" /> INDEPENDENT CREATIVE & DIGITAL AGENCY
+            <i className="status-dot" /> SEO · WEBSITES · DIGITAL MARKETING
           </span>
           <span>MUMBAI · EVERYWHERE ↗</span>
         </div>
         <h1 className="hero-title">
-          <SplitText text="WE DON’T" />
+          <SplitText text="GET FOUND." />
           <br />
           <span className="hero-accent">
-            <SplitText text="DO ORDINARY." />
+            <SplitText text="GROW ONLINE." />
           </span>
         </h1>
         <div className="hero-bottom">
           <div className="hero-copy">
             <p>
-              We build brands, break patterns,
+              SEO that helps people find you.
               <br />
-              and turn attention into impact.
+              Websites that turn visits into enquiries.
             </p>
-            <p className="muted">Strategy. Creativity. A little rebellion.</p>
+            <p className="muted">
+              Website redesign. Google & Meta Ads. Social media.
+            </p>
             <Magnetic>
-              <Link href="/work" className="pill lime">
-                Explore our work <ArrowUpRight size={19} />
+              <Link href="/contact" className="pill lime">
+                Let’s grow your business <ArrowUpRight size={19} />
               </Link>
             </Magnetic>
             <a className="scroll-cue" href="#intro">
               <span>
                 <ArrowDown size={15} />
               </span>{" "}
-              SCROLL TO GO OFFSCRIPT
+              EXPLORE WHAT WE DO
             </a>
           </div>
-          <div className="collage" aria-label="Selected creative work">
+          <div
+            className="collage digital-collage"
+            aria-label="Website redesign and search optimisation services"
+          >
             <Link
-              href="/work/after-hours"
-              className="collage-card card-night"
-              data-cursor="VIEW"
+              href="/services/web-development"
+              className="collage-card website-preview"
+              data-cursor="EXPLORE"
             >
-              <Image
-                src={photo(projects[1].image)}
-                alt="Atmospheric night sky for After Hours campaign"
-                fill
-                priority
-                sizes="30vw"
-              />
-              <span>
-                AFTER
-                <br />
-                HOURS<span className="tiny">CULTURE DOESN’T CLOCK OUT.</span>
+              <span className="mock-browser">
+                <i />
+                <i />
+                <i />
+                <span>your-business.com</span>
+                <ArrowUpRight size={14} />
+              </span>
+              <div className="mini-website">
+                <span className="mini-brand">
+                  yourbrand<span>®</span>
+                </span>
+                <small>DESIGNED TO DO MORE.</small>
+                <strong>
+                  A better
+                  <br />
+                  website.
+                  <br />
+                  <em>
+                    A better
+                    <br />
+                    first hello.
+                  </em>
+                </strong>
+                <span className="mini-button">
+                  Let’s talk <ArrowUpRight size={12} />
+                </span>
+                <div className="mini-orbit" aria-hidden="true">
+                  ↗
+                </div>
+              </div>
+              <span className="mock-caption">
+                <Globe size={12} /> WEBSITE DESIGN & REDESIGN
               </span>
             </Link>
             <Link
-              href="/work/velocity"
-              className="collage-card card-shoe"
-              data-cursor="VIEW"
+              href="/services/seo"
+              className="collage-card search-preview"
+              data-cursor="EXPLORE"
             >
-              <Image
-                src={photo(projects[0].image)}
-                alt="Red running shoe, Velocity brand campaign"
-                fill
-                priority
-                sizes="35vw"
-              />
-              <span className="card-top">
-                VELOCITY® <ArrowUpRight size={18} />
+              <span className="search-preview-top">
+                <Search size={16} />
+                <span>SEARCH VISIBILITY</span>
+                <ArrowUpRight size={15} />
               </span>
               <strong>
-                RUN YOUR
+                Be the answer.
                 <br />
-                <i>OWN WAY.</i>
+                <em>Not just a result.</em>
               </strong>
-              <small>A BRAND THAT NEVER STANDS STILL.</small>
+              <span className="mini-search">
+                <Search size={13} /> your service, your city
+              </span>
+              <div className="search-result">
+                <span className="result-icon">y.</span>
+                <div>
+                  <small>YOUR BUSINESS</small>
+                  <span>your-business.com</span>
+                </div>
+                <Check size={14} />
+              </div>
+              <div className="search-result-copy">
+                <b>Your expertise. Easier to find.</b>
+                <span>
+                  Relevant pages. Useful content. A strong foundation.
+                </span>
+              </div>
+              <svg
+                className="mini-chart"
+                viewBox="0 0 300 100"
+                aria-hidden="true"
+              >
+                <path
+                  d="M0 80H300M0 45H300"
+                  stroke="#34412b"
+                  strokeDasharray="4 5"
+                />
+                <path
+                  d="M0 90L36 79L67 84L99 60L132 65L170 42L206 47L245 19L280 23L300 8"
+                  fill="none"
+                  stroke="#d6ff3f"
+                  strokeWidth="3"
+                />
+              </svg>
+              <span className="mock-caption">
+                SEO + CONTENT + LOCAL DISCOVERY
+              </span>
             </Link>
             <span className="round-sticker">
-              LESS BLAH.
-              <br />
+              LESS GUESSWORK.
               <strong>
                 MORE
                 <br />
-                BOOM.
+                DIRECTION.
               </strong>
               <i>↗</i>
-            </span>
-            <span className="collage-note">
-              A little different.
-              <br />
-              By design. ⤴
             </span>
           </div>
           {webgl && (
@@ -424,35 +427,42 @@ export default function Home() {
           )}
         </div>
         <div className="hero-foot">
-          <span>BIG IDEAS. ZERO AUTOPILOT.</span>
+          <span>YOUR BUSINESS. OUR DIGITAL EXPERTISE.</span>
           <span>
-            SELECTED WORK, 2025—26 <span className="accent">↗</span>
+            BUILT TO CONNECT SEARCH, CLICKS & ENQUIRIES{" "}
+            <span className="accent">↗</span>
           </span>
         </div>
       </section>
-      <div className="client-strip">
+      <div className="capability-strip">
         <span>
-          GOOD COMPANY.
+          YOUR NEXT STAGE.
           <br />
-          GREAT POSSIBILITIES.
+          OUR CORE EXPERTISE.
         </span>
         {[
-          "velocity®",
-          "after hours",
-          "form & field",
-          "DAILY DOSE",
-          "nova.",
-        ].map((n) => (
-          <strong key={n}>{n}</strong>
+          { name: "SEO & local search", href: "seo", icon: Search },
+          { name: "Website redesign", href: "web-development", icon: Globe },
+          {
+            name: "Google & Meta Ads",
+            href: "performance-marketing",
+            icon: Target,
+          },
+          { name: "Social media", href: "social-media", icon: BarChart3 },
+        ].map(({ name, href, icon: Icon }) => (
+          <Link key={href} href={"/services/" + href}>
+            <Icon size={18} />
+            {name}
+            <ArrowUpRight size={12} />
+          </Link>
         ))}
-        <small>CONCEPT BRANDS</small>
       </div>
       <Marquee />
       <section className="about-teaser section-pad" id="intro">
-        <span className="eyebrow">01 / A LITTLE ABOUT US</span>
+        <span className="eyebrow">01 / YOUR DIGITAL GROWTH PARTNER</span>
         <div>
           <h2 className="about-words">
-            {"The world has enough noise. We make the kind that matters."
+            {"Your customers are online. Let’s make sure your business is, too."
               .split(" ")
               .map((w, i) => (
                 <span key={i}>{w} </span>
@@ -460,29 +470,30 @@ export default function Home() {
           </h2>
           <div className="about-detail">
             <p>
-              We’re an independent crew of strategists, designers and digital
-              troublemakers. Bringing fresh perspectives and fearless creativity
-              to brands ready to do things differently.
+              We connect search, design and marketing so your business is easier
+              to find and easier to choose. From improving an existing website
+              to managing your next campaign, every service starts with your
+              goals.
             </p>
             <Link href="/about" className="text-link">
-              Meet the minds <ArrowUpRight size={18} />
+              Meet your digital team <ArrowUpRight size={18} />
             </Link>
           </div>
         </div>
       </section>
       <section className="services-section section-pad">
         <div className="section-heading">
-          <span className="eyebrow">02 / WHAT WE BRING</span>
+          <span className="eyebrow">02 / DIGITAL MARKETING SERVICES</span>
           <div>
             <h2>
-              Different skills.
+              Everything digital.
               <br />
-              <em>One big picture.</em>
+              <em>One focused team.</em>
             </h2>
             <p>
-              From the first “what if” to the final “wow”.
+              Need a better website? More search visibility?
               <br />
-              Built to work together. Made to move you forward.
+              Choose one service or a connected marketing plan.
             </p>
           </div>
         </div>
@@ -499,15 +510,15 @@ export default function Home() {
       </section>
       <section className="work-section section-pad">
         <div className="section-heading">
-          <span className="eyebrow">03 / SELECTED WORK</span>
+          <span className="eyebrow">03 / WHAT WE CAN DO FOR YOU</span>
           <h2>
-            Less talk.
+            Digital problems.
             <br />
-            <em>More proof.</em>
+            <em>Practical solutions.</em>
             <sup>(04)</sup>
           </h2>
           <Link href="/work" className="text-link">
-            All our work <ArrowUpRight size={18} />
+            Explore the approach <ArrowUpRight size={18} />
           </Link>
         </div>
         <div className="work-grid">
@@ -518,32 +529,30 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="stats-section">
+      <section className="working-promises">
         <div>
-          <strong>
-            <Counter value={7} />
-          </strong>
-          <span>DISCIPLINES. ONE TEAM.</span>
+          <Search />
+          <h3>Found in search.</h3>
+          <p>Technical SEO, useful content and local visibility.</p>
         </div>
         <div>
-          <strong>
-            <Counter value={100} suffix="%" />
-          </strong>
-          <span>INDEPENDENT THINKING.</span>
+          <Globe />
+          <h3>Built to convert.</h3>
+          <p>A clear, fast website with a simple path to enquire.</p>
         </div>
         <div>
-          <strong>
-            <Counter value={0} />
-          </strong>
-          <span>ONE-SIZE-FITS-ALL IDEAS.</span>
+          <Target />
+          <h3>Promoted with purpose.</h3>
+          <p>Focused ads and social content for your audience.</p>
         </div>
         <div>
-          <strong>∞</strong>
-          <span>POSSIBILITIES AHEAD.</span>
+          <BarChart3 />
+          <h3>Measured clearly.</h3>
+          <p>Transparent reporting and practical next steps.</p>
         </div>
       </section>
       <HorizontalScroll />
-      <Testimonials />
+      <GrowthQuestions />
       <CTA />
     </div>
   );

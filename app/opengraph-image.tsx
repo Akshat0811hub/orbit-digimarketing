@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-export const alt = "OFFSCRIPT — Independent minds. Extraordinary outcomes.";
+export const alt = "OFFSCRIPT — SEO, Website Redesign & Digital Marketing";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -29,11 +29,11 @@ export default function Image() {
           flexDirection: "column",
         }}
       >
-        <span>WE DON’T</span>
-        <span style={{ color: "#d6ff3f" }}>DO ORDINARY.</span>
+        <span>GET FOUND.</span>
+        <span style={{ color: "#d6ff3f" }}>GET CHOSEN.</span>
       </div>
       <div style={{ fontSize: 20 }}>
-        INDEPENDENT MINDS. EXTRAORDINARY OUTCOMES.
+        SEO · WEBSITE REDESIGN · PAID ADS · SOCIAL MEDIA
       </div>
     </div>,
     size,

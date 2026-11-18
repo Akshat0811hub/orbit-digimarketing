@@ -34,7 +34,7 @@ export default async function Page({
           {p.category} / {p.date} / {p.read} READ
         </span>
         <h1>{p.title}</h1>
-        <p>Words by the OFFSCRIPT studio</p>
+        <p>Notes from OFFSCRIPT</p>
       </header>
       <div className="article-image">
         <Image src={photo(p.image)} alt={p.title} fill priority sizes="100vw" />
@@ -42,18 +42,7 @@ export default async function Page({
       <div className="article-body">
         {p.body.map((b, i) => (
           <section key={b}>
-            {i > 0 && (
-              <h2>
-                {
-                  [
-                    "",
-                    "Start with the right question.",
-                    "Give the idea room to grow.",
-                    "Keep the conversation going.",
-                  ][i]
-                }
-              </h2>
-            )}
+            {i > 0 && <h2>{p.headings[i]}</h2>}
             <p>{b}</p>
           </section>
         ))}

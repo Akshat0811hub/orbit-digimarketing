@@ -114,7 +114,7 @@ export function Preloader() {
         offscript<span>®</span>
       </strong>
       <div>
-        GOOD THINGS DON’T FOLLOW SCRIPTS. <span ref={num}>000</span>
+        YOUR NEXT CHAPTER STARTS ONLINE. <span ref={num}>000</span>
       </div>
     </div>
   );
@@ -264,14 +264,11 @@ export function Marquee() {
     return () => ctx.revert();
   }, []);
   return (
-    <div
-      className="marquee"
-      aria-label="Independent minds. Extraordinary outcomes."
-    >
+    <div className="marquee" aria-label="Search. Design. Market. Grow.">
       <div ref={ref}>
         {[0, 1, 2, 3].map((n) => (
           <span key={n} aria-hidden="true">
-            INDEPENDENT MINDS <i>✳</i> EXTRAORDINARY OUTCOMES <i>✳</i>{" "}
+            SEARCH <i>✳</i> DESIGN <i>✳</i> MARKET <i>✳</i> GROW <i>✳</i>{" "}
           </span>
         ))}
       </div>

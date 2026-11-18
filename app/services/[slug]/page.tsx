@@ -35,36 +35,28 @@ export default async function Page({
       />
       <section className="service-detail section-pad">
         <div>
-          <span className="eyebrow">WHAT’S IN THE MIX</span>
+          <span className="eyebrow">HOW WE CAN HELP</span>
           <h2>
-            From ambition
+            A clear plan.
             <br />
-            to action.
+            Practical steps.
           </h2>
           <Link className="pill lime" href={`/contact?service=${s.slug}`}>
             Let’s talk {s.name.toLowerCase()} ↗
           </Link>
         </div>
         <div>
-          {s.deliverables.map((d, i) => (
-            <article key={d}>
+          {s.approach.map((step, i) => (
+            <article key={step.title}>
               <span>0{i + 1}</span>
-              <h3>{d}</h3>
-              <p>
-                {
-                  [
-                    "We start with the context, the audience and the opportunity. Together, we define what success should look like.",
-                    "A collaborative creative process turns the strategy into tangible work. You see the thinking, not just the finished files.",
-                    "We launch with clear measures, review what we learn and keep improving the experience.",
-                  ][i]
-                }
-              </p>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
             </article>
           ))}
         </div>
       </section>
       <section className="section-pad related-work">
-        <span className="eyebrow">THE THINKING, IN ACTION</span>
+        <span className="eyebrow">EXPLORE A DEMONSTRATION CONCEPT</span>
         <ProjectCard
           project={projects[services.indexOf(s) % projects.length]}
         />

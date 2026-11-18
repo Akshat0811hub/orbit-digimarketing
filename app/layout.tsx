@@ -8,6 +8,7 @@ import {
   PageTransition,
 } from "@/components/animations";
 import "@/styles/globals.css";
+import "@/styles/digital.css";
 const display = Syne({
   subsets: ["latin"],
   variable: "--font-display",
@@ -22,11 +23,11 @@ const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(base),
   title: {
-    default: "OFFSCRIPT® — Independent minds. Extraordinary outcomes.",
+    default: "OFFSCRIPT® — SEO, Website Redesign & Digital Marketing",
     template: "%s — OFFSCRIPT®",
   },
   description:
-    "An independent creative and digital agency for brands ready to do things differently. Strategy, branding, social, film and digital experiences.",
+    "Get found. Get chosen. OFFSCRIPT connects SEO, website redesign, Google and Meta ads, and social media to help your business grow online.",
   openGraph: {
     type: "website",
     siteName: "OFFSCRIPT",
@@ -63,7 +64,7 @@ export default function RootLayout({
               name: "OFFSCRIPT",
               url: base,
               description:
-                "Independent creative and digital agency concept website.",
+                "Digital marketing services including SEO, website redesign, paid advertising, content and social media.",
             }),
           }}
         />

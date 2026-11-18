@@ -1,225 +1,323 @@
 export const services = [
   {
-    slug: "social-media",
-    name: "Social & culture",
-    tag: "Make the feed feel something.",
+    slug: "seo",
+    name: "SEO & local search",
+    tag: "Get found by the right people.",
     description:
-      "Platform-native stories that turn passive scrollers into an active community. We build a distinct social voice, then give people a reason to come back.",
+      "We improve how your business appears in search with technical SEO, useful content and a stronger local presence. A clear plan to connect relevant searches with your services.",
     deliverables: [
-      "Social strategy & channel audits",
-      "Content calendars & community management",
-      "Short-form content & creator collaborations",
+      "Technical & on-page SEO",
+      "Keyword research & content planning",
+      "Google Business Profile & local SEO",
     ],
-  },
-  {
-    slug: "branding",
-    name: "Brand & strategy",
-    tag: "Be unmistakably you.",
-    description:
-      "Positioning, identity and a point of view. We find what makes your business different and build a brand that makes it impossible to miss.",
-    deliverables: [
-      "Research & brand positioning",
-      "Visual identity & art direction",
-      "Verbal identity & brand guidelines",
-    ],
-  },
-  {
-    slug: "performance-marketing",
-    name: "Performance & growth",
-    tag: "Good creative. Real outcomes.",
-    description:
-      "Full-funnel campaigns where sharp creative meets rigorous experimentation. We connect the first impression to the final conversion.",
-    deliverables: [
-      "Paid social & search campaigns",
-      "Creative testing & conversion strategy",
-      "Analytics, attribution & reporting",
-    ],
-  },
-  {
-    slug: "video-production",
-    name: "Film & production",
-    tag: "Stories with stopping power.",
-    description:
-      "From a six-second hook to a brand film, we bring ideas to life with a small, ambitious crew and a genuinely cinematic eye.",
-    deliverables: [
-      "Concept development & scripting",
-      "Production & photography",
-      "Editing, motion design & sound",
+    approach: [
+      {
+        title: "Find what is holding your site back",
+        body: "We review indexing, site structure, page performance and existing search data. You get a prioritised action plan with clear ownership, rather than a long list of unexplained errors.",
+      },
+      {
+        title: "Build pages around search intent",
+        body: "We map relevant queries to your services, improve page titles and internal links, and plan useful content that answers real customer questions.",
+      },
+      {
+        title: "Strengthen local discovery",
+        body: "We review your Google Business Profile, service information and local landing pages. Reporting connects search visibility to website visits and enquiries without promising a particular ranking.",
+      },
     ],
   },
   {
     slug: "web-development",
-    name: "Digital experiences",
-    tag: "Make every interaction count.",
+    name: "Website redesign",
+    tag: "Turn more visits into enquiries.",
     description:
-      "Fast, accessible websites with personality. Strategy, design and development work together to turn attention into meaningful action.",
+      "An outdated website can make a good business hard to understand. We redesign and develop fast, responsive websites with clear messaging, intuitive navigation and a better enquiry journey.",
     deliverables: [
-      "UX research & interface design",
-      "Next.js development & CMS integration",
-      "Accessibility & performance optimisation",
+      "Website audits & UX design",
+      "Responsive design & development",
+      "Landing pages & conversion optimisation",
+    ],
+    approach: [
+      {
+        title: "Audit the existing experience",
+        body: "We look at your pages, user journeys and analytics to find confusing navigation, weak messaging and unnecessary friction. Then we agree on a sitemap and the actions each page should support.",
+      },
+      {
+        title: "Design and build with a purpose",
+        body: "We rewrite the page hierarchy, design responsive interfaces and build accessible components. Your services, proof points and contact options are easy to find on mobile and desktop.",
+      },
+      {
+        title: "Launch with the details covered",
+        body: "We check forms, redirects, metadata and key user journeys before launch. You receive a maintainable site, a content handover and a plan for measuring enquiries.",
+      },
+    ],
+  },
+  {
+    slug: "performance-marketing",
+    name: "Google & Meta ads",
+    tag: "Put your budget behind a plan.",
+    description:
+      "Reach people searching for your services and introduce your business to relevant audiences. We plan, build and manage paid campaigns with clear budgets, purposeful landing pages and transparent reporting.",
+    deliverables: [
+      "Google Search & Meta campaigns",
+      "Ad creative & landing-page testing",
+      "Conversion tracking & reporting",
+    ],
+    approach: [
+      {
+        title: "Agree on the commercial goal",
+        body: "We define the offer, audience, budget and what counts as a useful conversion. Tracking is reviewed before campaigns launch so reporting has a dependable starting point.",
+      },
+      {
+        title: "Connect the ad to the next step",
+        body: "Campaign structure, copy and creative are developed alongside the landing page. Search intent, message and form experience should tell the same story.",
+      },
+      {
+        title: "Test, review and improve",
+        body: "We review search terms, creative performance and lead quality, then make focused changes. Reports explain spend, results and the next test instead of relying on impressions alone.",
+      },
+    ],
+  },
+  {
+    slug: "social-media",
+    name: "Social media management",
+    tag: "Show up with something to say.",
+    description:
+      "A consistent social presence that explains your business and starts useful conversations. We combine channel strategy, content creation and community management into a practical monthly plan.",
+    deliverables: [
+      "Social strategy & content calendars",
+      "Posts, carousels & short-form video",
+      "Community management & reporting",
+    ],
+    approach: [
+      {
+        title: "Define your content direction",
+        body: "We agree on the audience, platforms and role of each channel. Content pillars translate your services, expertise and customer questions into a repeatable editorial plan.",
+      },
+      {
+        title: "Create a consistent presence",
+        body: "We develop posts, carousels and short videos with a recognisable visual style and clear voice. A shared calendar keeps reviews, approvals and publishing organised.",
+      },
+      {
+        title: "Keep the conversation moving",
+        body: "Community guidelines help us respond consistently, while reporting looks at meaningful engagement and website actions. We use those observations to improve the next content cycle.",
+      },
+    ],
+  },
+  {
+    slug: "branding",
+    name: "Branding & design",
+    tag: "Look consistent. Sound like you.",
+    description:
+      "A clear identity gives your marketing a stronger foundation. We create brand positioning, visual systems and practical design assets that work across your website, ads and social channels.",
+    deliverables: [
+      "Brand positioning & messaging",
+      "Logo & visual identity",
+      "Digital brand guidelines & templates",
+    ],
+    approach: [
+      {
+        title: "Make your difference clear",
+        body: "We explore your audience, services and competitive context to develop a focused positioning statement and messaging hierarchy.",
+      },
+      {
+        title: "Create a connected identity",
+        body: "Typography, colour, imagery and logo applications form a consistent visual language. We test the system on the digital touchpoints your customers actually see.",
+      },
+      {
+        title: "Make it easy to use",
+        body: "A practical brand guide and reusable templates help your team create consistent materials without starting from scratch each time.",
+      },
+    ],
+  },
+  {
+    slug: "video-production",
+    name: "Content & video",
+    tag: "Make your expertise easy to watch.",
+    description:
+      "Useful content, made for the channel it lives on. We turn your services, customer questions and brand story into website copy, campaign assets and short-form video.",
+    deliverables: [
+      "Content strategy & website copy",
+      "Reels, explainers & ad videos",
+      "Editing, captions & motion graphics",
+    ],
+    approach: [
+      {
+        title: "Start with the message",
+        body: "We define what the audience should understand and do next. Scripts and content outlines keep production focused on the brief.",
+      },
+      {
+        title: "Produce for the platform",
+        body: "We plan shot lists, create assets and edit for the intended placement. Format, captions and pacing are considered from the start.",
+      },
+      {
+        title: "Build a reusable content library",
+        body: "Approved content becomes a set of useful versions for your website, social channels and campaigns, with organised files and clear usage guidance.",
+      },
     ],
   },
   {
     slug: "influencer-marketing",
-    name: "Creators & influence",
-    tag: "Real voices. Lasting relevance.",
+    name: "Influencer marketing",
+    tag: "Find the right voices for your brand.",
     description:
-      "We connect brands with creators who already speak their audience’s language. Partnerships built on creative fit, transparency and trust.",
+      "Creator partnerships built around audience relevance and a clear brief. We help plan collaborations, coordinate content and review the contribution each partnership makes.",
     deliverables: [
-      "Creator discovery & outreach",
-      "Partnership strategy & campaign production",
-      "Content rights & performance reporting",
+      "Creator research & shortlisting",
+      "Campaign briefs & collaboration management",
+      "Content review & campaign reporting",
     ],
-  },
-  {
-    slug: "seo",
-    name: "Search & discovery",
-    tag: "Show up when it matters.",
-    description:
-      "A clear technical foundation and useful, human content that helps the right people find you. Sustainable discovery, built one insight at a time.",
-    deliverables: [
-      "Technical SEO & search audits",
-      "Editorial strategy & content production",
-      "Local search & ongoing measurement",
+    approach: [
+      {
+        title: "Choose for relevance",
+        body: "We look at audience fit, content quality and the style of each creator rather than treating follower counts as the whole story.",
+      },
+      {
+        title: "Give the collaboration direction",
+        body: "A clear brief covers the message, deliverables, review process and disclosure requirements while leaving room for the creator’s own voice.",
+      },
+      {
+        title: "Review the work in context",
+        body: "We collect campaign outputs and available performance data, review audience response and document what to carry into future partnerships.",
+      },
     ],
   },
 ];
+
+// Demonstration concepts explain our approach. They are not client case studies.
 export const projects = [
   {
-    slug: "velocity",
-    name: "VELOCITY",
-    subtitle: "Built for the ones who move.",
-    category: "Branding",
+    slug: "local-search",
+    name: "LOCAL SEARCH",
+    subtitle: "A clearer path from search to enquiry.",
+    category: "SEO",
     year: "2026",
-    image: "photo-1542291026-7eec264c27ff",
-    color: "#e84c27",
-    label: "RUN YOUR OWN WAY.",
+    image: "/images/seo-dashboard.svg",
+    color: "#263a29",
+    label: "BE FOUND. BE CHOSEN.",
     description:
-      "An independent running label with a restless spirit. A complete brand world built around the freedom to move on your own terms.",
+      "A local SEO concept for a service business: connect relevant searches to useful service pages and a clear next step.",
     challenge:
-      "In a category dominated by elite performance, Velocity needed to speak to everyday runners without losing its edge.",
+      "The example business has unclear service pages, inconsistent location information and no shared view of search performance.",
     solution:
-      "We created an unapologetic identity, a street-level launch campaign and a social toolkit that celebrates movement over medals.",
-    results: [
-      "3.2× awareness lift",
-      "180K launch reach",
-      "42% engagement lift",
-    ],
+      "The proposed approach combines a technical audit, service-to-keyword mapping, local page improvements and a reporting dashboard for search enquiries.",
+    results: ["Technical audit", "Local page plan", "Search reporting"],
   },
   {
-    slug: "after-hours",
-    name: "AFTER HOURS",
-    subtitle: "Culture doesn’t clock out.",
-    category: "Social",
+    slug: "website-redesign",
+    name: "WEBSITE RESET",
+    subtitle: "A better website. A simpler next step.",
+    category: "Web Redesign",
     year: "2026",
-    image: "photo-1519608487953-e999c86e7455",
-    color: "#7753bc",
-    label: "GOOD NIGHTS. GREAT STORIES.",
+    image: "/images/website-redesign.svg",
+    color: "#59478b",
+    label: "CLARITY THAT CONVERTS.",
     description:
-      "A music-led cultural platform for the city after dark. Social strategy, creator collaborations and a launch worth staying up for.",
+      "A website redesign concept for a growing services company, with clearer positioning, a mobile-first interface and an easier enquiry flow.",
     challenge:
-      "A new cultural platform needed a community before it could fill a room.",
+      "The example website makes visitors work too hard to understand the offer and find a contact route on mobile.",
     solution:
-      "We turned local tastemakers into correspondents, documenting the moments between the headline acts.",
-    results: ["2.4M content views", "18K new followers", "3 sold-out events"],
+      "The redesign proposes a focused sitemap, service-led page layouts, visible calls to action and a short, accessible enquiry form.",
+    results: ["UX & page design", "Responsive build", "Enquiry journey"],
   },
   {
-    slug: "form-and-field",
-    name: "FORM & FIELD",
-    subtitle: "Less noise. More nature.",
-    category: "Digital",
-    year: "2025",
-    image: "photo-1600210492486-724fe5c67fb0",
-    color: "#a6ad86",
-    label: "ROOM TO FEEL.",
+    slug: "lead-generation",
+    name: "LEAD ENGINE",
+    subtitle: "From ad click to a useful conversation.",
+    category: "Paid Ads",
+    year: "2026",
+    image: "/images/paid-campaign.svg",
+    color: "#426172",
+    label: "EVERY CLICK HAS A JOB.",
     description:
-      "A considered digital home for a contemporary interiors studio. A calmer way to discover spaces, materials and the stories behind them.",
+      "A Google and Meta campaign concept that brings targeting, messaging, landing pages and measurement into one connected plan.",
     challenge:
-      "A beautiful portfolio was hidden behind a slow, confusing website.",
+      "The example campaign sends broad traffic to a generic homepage, making it difficult to understand which enquiries are valuable.",
     solution:
-      "An image-led experience puts the work first, with thoughtful wayfinding and a frictionless enquiry journey.",
-    results: ["61% more enquiries", "1.8× time on site", "38% lower bounce"],
+      "The campaign plan groups audiences and search intent around specific offers, then connects each ad to a relevant landing page and a defined conversion event.",
+    results: ["Campaign structure", "Ad & landing page", "Tracking plan"],
   },
   {
-    slug: "daily-dose",
-    name: "DAILY DOSE",
-    subtitle: "A little ritual. A big feeling.",
-    category: "Campaign",
-    year: "2025",
-    image: "photo-1442512595331-e89e73853f31",
-    color: "#c4a67f",
-    label: "MAKE MORNINGS YOURS.",
+    slug: "social-content",
+    name: "SOCIAL SYSTEM",
+    subtitle: "A consistent presence with a clear purpose.",
+    category: "Social Media",
+    year: "2026",
+    image: "/images/social-content.svg",
+    color: "#676b3a",
+    label: "SHOW UP. STAND OUT.",
     description:
-      "An independent coffee brand finding its place in the everyday. Creative strategy, production and a performance campaign with warmth.",
+      "A social media concept that turns a service business’s expertise into a consistent calendar of useful posts, carousels and short videos.",
     challenge:
-      "Daily Dose needed to grow subscriptions while keeping the intimacy of a neighbourhood café.",
+      "The example business posts irregularly and lacks a shared visual style or clear connection between content and its services.",
     solution:
-      "We built a campaign around personal morning rituals, testing story-led films against product-focused creative.",
-    results: [
-      "4.1× target ROAS",
-      "32% lower target CPA",
-      "210% subscription goal",
-    ],
+      "The proposed system pairs service-led content pillars with reusable design templates, a monthly approval calendar and a simple reporting framework.",
+    results: ["Content pillars", "Creative templates", "Publishing plan"],
   },
 ];
+
 export const posts = [
   {
-    slug: "attention-is-earned",
-    title: "Attention isn’t bought. It’s earned.",
-    category: "Perspective",
-    date: "October 28, 2026",
-    read: "5 min",
-    image: projects[1].image,
-    body: [
-      "The feed is not waiting for your brand. It is already full of friends, opinions, jokes and things people actually care about. The first job of creative work is to earn a place in that world.",
-      "Start with a human observation, not a product feature. What does your audience talk about when your brand is not in the room? The best brief often begins with that conversation.",
-      "Build a repeatable point of view. A single viral moment can get attention, but a recognisable voice creates familiarity. Give your team clear creative principles rather than a rigid list of formats.",
-      "Measure what happens after the impression. Saves, meaningful replies, branded search and returning customers reveal whether your work is becoming part of someone’s life. Attention is the beginning of a relationship, not the outcome.",
-    ],
-  },
-  {
-    slug: "brand-systems-with-a-pulse",
-    title: "Build a brand system with a pulse.",
-    category: "Design",
-    date: "October 16, 2026",
-    read: "4 min",
+    slug: "seo-before-more-content",
+    title: "Before more content, check your SEO foundations.",
+    category: "SEO",
+    date: "November 12, 2026",
+    read: "3 min",
     image: projects[0].image,
+    headings: [
+      "",
+      "Start with the pages you already have.",
+      "Make each page useful.",
+      "Connect reporting to the next action.",
+    ],
     body: [
-      "A brand is not a PDF. It is a living collection of decisions, made by different people across different moments. Good systems help those decisions feel connected without making everything look identical.",
-      "Separate the constants from the variables. Your point of view, typographic voice and core palette might stay fixed. Composition, image treatment and motion can respond to context.",
-      "Test the system where it will actually live. A social thumbnail, a checkout screen and a street poster each put different demands on your identity. Build for those realities from the beginning.",
+      "Publishing more pages is not always the best starting point. A focused website review can reveal unclear services, missing internal links and important pages that are difficult to find. The first step is understanding the existing experience.",
+      "List your main services and the pages that explain them. Check that each page has a clear purpose, useful information and a relevant next step. Look for duplicate topics or gaps that leave customer questions unanswered.",
+      "A service page should explain who it helps, what is included and how to enquire. Descriptive titles, logical headings and internal links make the information easier to navigate. Content should serve the reader before it serves a keyword list.",
+      "Choose reporting that helps you make decisions. Review relevant search queries, visits to service pages and enquiry events together. Use the findings to prioritise the next improvement rather than treating a ranking report as the final outcome.",
     ],
   },
   {
-    slug: "creative-is-a-growth-strategy",
-    title: "Your next growth lever is creative.",
-    category: "Growth",
-    date: "October 02, 2026",
-    read: "6 min",
-    image: projects[3].image,
+    slug: "website-redesign-checklist",
+    title: "A website redesign starts before the first mockup.",
+    category: "Web Redesign",
+    date: "November 05, 2026",
+    read: "3 min",
+    image: projects[1].image,
+    headings: [
+      "",
+      "Define the job of the website.",
+      "Fix the journey, then refine the design.",
+      "Plan the handover before launch.",
+    ],
     body: [
-      "When targeting tools become available to everyone, the message becomes the advantage. Creative work is a way to discover what customers value, not simply a way to decorate a campaign.",
-      "Test hypotheses, not arbitrary variations. A new background colour tells you less than a different customer problem. Write down what each concept is designed to teach you.",
-      "Build a feedback loop between media and creative teams. Review the first three seconds, the comments and the landing-page behaviour together. Make the next round of ideas better informed, not just more numerous.",
+      "A fresh visual style is only one part of a redesign. A useful website also needs clear information, sensible navigation and a simple way for visitors to take the next step. Those decisions belong in the brief, not at the end of the project.",
+      "Agree on the primary audience and the action you want them to take. For a service business, that may be an enquiry with enough context to start a useful conversation. Each page should support that goal in a way that fits its content.",
+      "Map the path from the homepage to a service page and then to the contact form. Read it on a small screen. If the offer is hard to understand or the next step is hidden, a new colour palette alone will not solve the problem.",
+      "Prepare a redirect plan for changed URLs, check form delivery and review the final copy. Make sure someone owns ongoing content updates and measurement. A good launch includes a clear plan for the weeks that follow.",
     ],
   },
-];
-export const team = [
   {
-    name: "Aanya Mehta",
-    role: "Strategy & co-founder",
-    image: "photo-1580489944761-15a19d654956",
-  },
-  {
-    name: "Kabir Shah",
-    role: "Creative & co-founder",
-    image: "photo-1500648767791-00dcc994a43e",
-  },
-  {
-    name: "Maya Rao",
-    role: "Head of design",
-    image: "photo-1534528741775-53994a69daeb",
+    slug: "paid-ads-landing-pages",
+    title: "Your ad and landing page should tell the same story.",
+    category: "Paid Ads",
+    date: "October 29, 2026",
+    read: "3 min",
+    image: projects[2].image,
+    headings: [
+      "",
+      "Keep the promise consistent.",
+      "Ask for the right amount of information.",
+      "Test one clear hypothesis.",
+    ],
+    body: [
+      "A campaign does not end at the click. The page that follows needs to help visitors understand the offer and decide whether it is right for them. Reviewing the ad and the destination together makes that experience easier to improve.",
+      "Compare the ad headline with the first section of the landing page. Do they describe the same service and next step? Keep important details consistent so visitors do not have to search for the offer that brought them there.",
+      "An enquiry form should collect the information needed for a useful reply. Every field adds a task for the visitor. Explain what happens after submission and make validation messages easy to understand.",
+      "Write down what you want each test to teach you. A clearer value proposition, a different offer or a shorter enquiry flow can be assessed against a defined goal. Review lead quality as well as volume before deciding what to scale.",
+    ],
   },
 ];
 export const photo = (id: string) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1800&q=85`;
+  id.startsWith("/")
+    ? id
+    : `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1800&q=85`;

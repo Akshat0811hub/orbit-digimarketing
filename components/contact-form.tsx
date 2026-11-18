@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { contactSchema, type ContactValues } from "@/lib/contact";
 import { services } from "@/data/content";
@@ -11,11 +11,18 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<ContactValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: { website: "", company: "" },
   });
+  // Read the service link after hydration without opting the page into SSR.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get("service");
+    const selected = services.find((service) => service.slug === slug);
+    if (selected) setValue("service", selected.name);
+  }, [setValue]);
   const submit = async (data: ContactValues) => {
     setStatus("");
     try {
@@ -43,7 +50,10 @@ export default function ContactForm() {
           <br />
           start here.
         </h2>
-        <p>Your brief has landed in our inbox. We’ll be in touch soon.</p>
+        <p>
+          Your enquiry has landed in our inbox. We’ll be in touch to discuss
+          your business goals.
+        </p>
         <button className="pill lime" onClick={() => setSent(false)}>
           Send another enquiry ↗
         </button>
@@ -58,7 +68,7 @@ export default function ContactForm() {
               ? "Your name *"
               : n === "email"
                 ? "Email address *"
-                : "Company / brand"}
+                : "Business name"}
             <input
               {...register(n)}
               type={n === "email" ? "email" : "text"}
@@ -68,7 +78,7 @@ export default function ContactForm() {
                   ? "Alex Smith"
                   : n === "email"
                     ? "alex@yourbrand.com"
-                    : "Your next big thing"
+                    : "Your business or organisation"
               }
               aria-invalid={!!errors[n]}
               aria-describedby={errors[n] ? `${n}-error` : undefined}
@@ -81,11 +91,13 @@ export default function ContactForm() {
           </label>
         ))}
         <label>
-          Budget range *
+          Estimated project / monthly budget *
           <select {...register("budget")} aria-invalid={!!errors.budget}>
             <option value="">Select your range</option>
             {[
-              "Under ₹2 lakh",
+              "Under ₹25,000",
+              "₹25,000–50,000",
+              "₹50,000–2 lakh",
               "₹2–5 lakh",
               "₹5–10 lakh",
               "₹10 lakh+",
@@ -106,18 +118,18 @@ export default function ContactForm() {
           {services.map((s) => (
             <option key={s.slug}>{s.name}</option>
           ))}
-          <option>A little of everything</option>
+          <option>A complete digital marketing plan</option>
         </select>
         {errors.service && (
           <small className="form-error">{errors.service.message}</small>
         )}
       </label>
       <label>
-        Tell us about your idea *
+        What would you like to improve? *
         <textarea
           {...register("message")}
           rows={4}
-          placeholder="The ambition, the challenge, the wild idea. We’re all ears."
+          placeholder="Share your website URL, what your business does, and your goal—more search visibility, a website redesign, or better leads."
           aria-invalid={!!errors.message}
         />
         {errors.message && (
@@ -135,7 +147,7 @@ export default function ContactForm() {
         no unsolicited updates.
       </p>
       <button className="pill lime" disabled={isSubmitting}>
-        {isSubmitting ? "Sending your idea…" : "Let’s make it happen"}
+        {isSubmitting ? "Sending your enquiry…" : "Let’s discuss your business"}
         <ArrowUpRight size={18} />
       </button>
       {status && (

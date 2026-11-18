@@ -7,16 +7,16 @@ import { CTA } from "@/components/layout";
 export const metadata: Metadata = {
   title: "The journal",
   description:
-    "Fresh perspectives on brands, culture, creative work and digital growth.",
+    "Practical notes on SEO, website redesign, landing pages and digital marketing.",
 };
 export default function Page() {
   return (
     <>
       <PageHeading
         label="THE OFFSCRIPT JOURNAL"
-        title="Open minds."
-        accent="Fresh perspectives."
-        description="Things we’re thinking about. Things we’re learning. A few things we can’t stop talking about."
+        title="Less guesswork."
+        accent="Better marketing."
+        description="Practical ideas for a better website, a clearer search presence and more purposeful campaigns."
       />
       <section className="blog-grid section-pad">
         {posts.map((p, i) => (

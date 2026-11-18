@@ -3,18 +3,18 @@ import Portfolio from "@/components/portfolio";
 import { PageHeading } from "@/components/page-heading";
 import { CTA } from "@/components/layout";
 export const metadata: Metadata = {
-  title: "Selected work",
+  title: "Digital marketing concepts",
   description:
-    "Brand worlds, culture-first campaigns and digital experiences. Explore our concept portfolio.",
+    "Explore SEO, website redesign, paid advertising and social media concepts that explain our digital marketing approach.",
 };
 export default function Page() {
   return (
     <>
       <PageHeading
-        label="OUR WORK / 2025—2026"
-        title="Made to"
-        accent="make a mark."
-        description="Different brands. Different challenges. The same restless ambition to make something that matters."
+        label="OUR APPROACH / DEMONSTRATION PROJECTS"
+        title="Digital ideas."
+        accent="Practical applications."
+        description="Explore how we approach search visibility, website journeys, paid campaigns and social content. These examples show the work involved, without invented client results."
       />
       <section className="portfolio-section">
         <Portfolio />

@@ -9,9 +9,9 @@ import { useUI } from "@/store/ui";
 import { Magnetic } from "./animations";
 import { photo, projects } from "@/data/content";
 const links = [
-  ["Work", "/work"],
-  ["About", "/about"],
   ["Services", "/services"],
+  ["Our approach", "/work"],
+  ["About", "/about"],
   ["Journal", "/blog"],
   ["Careers", "/careers"],
   ["Contact", "/contact"],
@@ -135,7 +135,7 @@ export function Navbar() {
                   key={url}
                   href={url}
                   onClick={() => setMenu(false)}
-                  onMouseEnter={() => setPreview(i % 4)}
+                  onMouseEnter={() => setPreview(i % projects.length)}
                 >
                   <sup>0{i + 1}</sup>
                   {label}
@@ -150,7 +150,7 @@ export function Navbar() {
                 fill
                 sizes="40vw"
               />
-              <span>IDEAS DON’T HAVE OFFICE HOURS.</span>
+              <span>GET FOUND. GET CHOSEN.</span>
             </div>
           </div>
         </div>
@@ -162,26 +162,26 @@ export function CTA() {
   return (
     <section className="cta-section">
       <div className="eyebrow">
-        <span className="status-dot" /> GOT A GOOD FEELING?
+        <span className="status-dot" /> READY FOR YOUR NEXT STAGE?
       </div>
       <Link href="/contact">
         <Magnetic>
           <h2>
-            LET’S MAKE
+            LET’S GROW
             <br />
-            <span>SOME NOISE.</span>
+            <span>YOUR BUSINESS.</span>
             <ArrowUpRight />
           </h2>
         </Magnetic>
       </Link>
       <div className="cta-bottom">
         <p>
-          A big ambition. A wild idea. A “what if”.
+          Better search visibility. A website that works harder.
           <br />
-          We’d love to hear it.
+          Let’s find the right next step for your business.
         </p>
-        <Link className="pill dark" href="/contact">
-          Start a conversation <ArrowUpRight size={18} />
+        <Link className="pill dark" href="/contact?service=web-development">
+          Request a website review <ArrowUpRight size={18} />
         </Link>
       </div>
     </section>
@@ -206,9 +206,9 @@ export function Footer() {
     <footer>
       <div className="footer-top">
         <p>
-          Independent minds.
+          SEO. Websites. Ads.
           <br />
-          Extraordinary outcomes.
+          Built around your business.
         </p>
         <div>
           <span className="eyebrow">FIND YOUR WAY</span>
@@ -222,7 +222,7 @@ export function Footer() {
         </div>
         <div>
           <span className="eyebrow">SAY HELLO</span>
-          <Link href="/contact">Let’s start something ↗</Link>
+          <Link href="/contact">Discuss your growth goals ↗</Link>
           <span className="local-time">Mumbai, IN · {time || "IST"}</span>
         </div>
         <button
@@ -244,9 +244,9 @@ export function Footer() {
         offscript<span>®</span>
       </Link>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} OFFSCRIPT. ALL IDEAS WELCOME.</span>
-        <span>FICTIONAL AGENCY · CONCEPT PROJECTS & SAMPLE RESULTS</span>
-        <span>MADE TO MOVE YOU ↗</span>
+        <span>© {new Date().getFullYear()} OFFSCRIPT. DIGITAL MARKETING.</span>
+        <span>PORTFOLIO EXAMPLES ARE ILLUSTRATIVE CONCEPTS</span>
+        <span>BUILT FOR WHAT’S NEXT ↗</span>
       </div>
     </footer>
   );

@@ -475,72 +475,6 @@ em {
 .collage-card:hover img {
   transform: scale(1.08);
 }
-.card-night {
-  width: 47%;
-  height: 290px;
-  left: 3%;
-  top: 5px;
-  transform: rotate(-12deg);
-  background: #6b487b;
-}
-.card-night img {
-  filter: brightness(0.6) hue-rotate(25deg);
-}
-.card-night > span {
-  position: absolute;
-  top: 48px;
-  left: 18px;
-  right: 18px;
-  text-align: center;
-  font: 800 clamp(25px, 4vw, 60px)/0.9 var(--font-display);
-  color: #efe7f8;
-}
-.card-night .tiny {
-  display: block;
-  font: 7px var(--font-body);
-  margin-top: 20px;
-  letter-spacing: 0.1em;
-}
-.card-shoe {
-  width: 55%;
-  height: 310px;
-  right: 0;
-  top: -10px;
-  background: #df4221;
-  transform: rotate(8deg);
-}
-.card-shoe img {
-  object-position: center;
-  filter: brightness(0.9);
-}
-.card-top {
-  position: absolute;
-  top: 15px;
-  left: 18px;
-  right: 18px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  letter-spacing: 0.05em;
-}
-.card-shoe strong {
-  position: absolute;
-  bottom: 40px;
-  left: 17px;
-  font: 800 clamp(25px, 3.2vw, 50px)/0.95 var(--font-display);
-  letter-spacing: -0.06em;
-}
-.card-shoe strong i {
-  font-style: normal;
-  color: var(--lime);
-}
-.card-shoe > small {
-  position: absolute;
-  bottom: 17px;
-  left: 18px;
-  font-size: 7px;
-  letter-spacing: 0.07em;
-}
 .round-sticker {
   position: absolute;
   right: 38%;
@@ -570,14 +504,6 @@ em {
   top: 32px;
   font-size: 20px;
 }
-.collage-note {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  font: italic 15px/1.2 Georgia;
-  transform: rotate(-9deg);
-  color: #b7b9aa;
-}
 .hero-webgl {
   position: absolute;
   width: 110px;
@@ -597,28 +523,6 @@ em {
 .hero-foot .accent {
   font-size: 20px;
   margin-left: 20px;
-}
-.client-strip {
-  padding: 35px var(--pad);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-  color: #a6a79f;
-}
-.client-strip > span {
-  font-size: 8px;
-  line-height: 1.7;
-  letter-spacing: 0.1em;
-}
-.client-strip strong {
-  font: 700 clamp(15px, 2vw, 27px) var(--font-display);
-  letter-spacing: -0.05em;
-}
-.client-strip small {
-  font-size: 7px;
-  writing-mode: vertical-rl;
-  letter-spacing: 0.1em;
 }
 .marquee {
   overflow: hidden;
@@ -754,37 +658,6 @@ em {
 .project-visual:hover img {
   filter: brightness(0.75);
 }
-.project-art {
-  position: absolute;
-  inset: 0;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #fff;
-  text-shadow: 0 1px 12px #0003;
-}
-.project-art small {
-  font-size: 8px;
-  letter-spacing: 0.1em;
-}
-.project-art strong {
-  font: 800 clamp(35px, 4.4vw, 75px)/0.9 var(--font-display);
-  letter-spacing: -0.06em;
-  max-width: 90%;
-}
-.project-art > span {
-  font-size: 9px;
-  letter-spacing: 0.14em;
-}
-.project-after-hours .project-art {
-  color: #e7ff9a;
-  background: #22102b35;
-}
-.project-form-and-field .project-art {
-  color: #fff;
-  background: #0002;
-}
 .project-arrow {
   position: absolute;
   right: 18px;
@@ -826,33 +699,6 @@ em {
 .project-caption small {
   margin-left: 10px;
   color: #7a7c70;
-}
-.stats-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 60px var(--pad);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.stats-section > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-right: 1px solid var(--line);
-}
-.stats-section > div:last-child {
-  border: 0;
-}
-.stats-section strong {
-  font: 600 clamp(45px, 7vw, 100px) var(--font-display);
-  letter-spacing: -0.07em;
-  color: var(--lime);
-}
-.stats-section > div > span {
-  font-size: 8px;
-  letter-spacing: 0.1em;
-  margin-top: 15px;
-  color: #b2b4a7;
 }
 .process-section {
   padding: 100px var(--pad);
@@ -896,80 +742,6 @@ em {
   height: 2px;
   margin-top: 35px;
   background: linear-gradient(90deg, var(--lime) 50%, #4d503b 50%);
-}
-.testimonial-section {
-  padding: 100px max(var(--pad), 12vw);
-}
-.testimonial-window {
-  overflow: hidden;
-  margin-top: 35px;
-  touch-action: pan-y;
-}
-.testimonial-track {
-  display: flex;
-  width: 300%;
-}
-.testimonial-track figure {
-  width: 33.3333%;
-  flex-shrink: 0;
-  padding-right: 25px;
-}
-.quote-mark {
-  color: var(--lime);
-  font: 100px/0.8 Georgia;
-}
-.testimonial-track blockquote {
-  font: 500 clamp(28px, 3.6vw, 55px)/1.2 var(--font-display);
-  letter-spacing: -0.04em;
-  margin: 0 0 30px;
-}
-.testimonial-track figcaption {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  font-size: 12px;
-}
-.testimonial-track figcaption small {
-  display: block;
-  color: var(--muted);
-  margin-top: 6px;
-  font-size: 10px;
-}
-.avatar {
-  width: 40px;
-  height: 40px;
-  background: #35382a;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  font-size: 12px;
-  color: var(--lime);
-}
-.slider-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-  font-size: 10px;
-}
-.slider-controls > span > span {
-  color: var(--muted);
-}
-.slider-controls > div {
-  display: flex;
-  gap: 10px;
-}
-.slider-controls button {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-}
-.slider-controls button:hover {
-  background: var(--lime);
-  color: #111;
 }
 .cta-section {
   background: var(--lime);
@@ -1694,12 +1466,6 @@ em {
   .collage {
     min-height: 430px;
   }
-  .card-night {
-    height: 380px;
-  }
-  .card-shoe {
-    height: 400px;
-  }
   .round-sticker {
     bottom: 20px;
     width: 150px;
@@ -1723,14 +1489,6 @@ em {
     grid-template-columns: 1fr 1.2fr;
     min-height: 340px;
   }
-  .card-night {
-    height: 240px;
-    top: 30px;
-  }
-  .card-shoe {
-    height: 260px;
-    top: 20px;
-  }
   .round-sticker {
     width: 90px;
     height: 90px;
@@ -1740,9 +1498,6 @@ em {
   .round-sticker strong {
     font-size: 17px;
   }
-  .collage-note {
-    display: none;
-  }
   .hero-webgl {
     display: none;
   }
@@ -1751,9 +1506,6 @@ em {
   }
   .hero-copy .muted {
     font-size: 10px;
-  }
-  .client-strip {
-    gap: 15px;
   }
   .section-pad {
     padding: 75px var(--pad);
@@ -1915,24 +1667,6 @@ em {
     min-height: 300px;
     width: 100%;
   }
-  .card-night {
-    height: 245px;
-    left: 3%;
-    width: 49%;
-    top: 15px;
-  }
-  .card-shoe {
-    height: 265px;
-    width: 56%;
-    top: 0;
-  }
-  .card-night > span {
-    font-size: 36px;
-    top: 65px;
-  }
-  .card-shoe strong {
-    font-size: 32px;
-  }
   .round-sticker {
     bottom: 0;
     right: 33%;
@@ -1945,25 +1679,6 @@ em {
   }
   .hero-foot .accent {
     margin-left: 5px;
-  }
-  .client-strip {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px 15px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-  .client-strip > span {
-    font-size: 6px;
-  }
-  .client-strip strong {
-    font-size: 17px;
-    text-align: center;
-  }
-  .client-strip small {
-    writing-mode: initial;
-    font-size: 6px;
-    text-align: center;
   }
   .marquee {
     padding: 13px 0;
@@ -2023,25 +1738,8 @@ em {
   .project-visual {
     height: 380px;
   }
-  .project-art strong {
-    font-size: 50px;
-  }
   .project-caption h3 {
     font-size: 25px;
-  }
-  .stats-section {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 40px var(--pad);
-  }
-  .stats-section > div:nth-child(2) {
-    border: 0;
-  }
-  .stats-section strong {
-    font-size: 60px;
-  }
-  .stats-section > div > span {
-    font-size: 7px;
   }
   .process-section .section-heading {
     gap: 25px;
@@ -2055,15 +1753,6 @@ em {
   .process-track h3 {
     font-size: 45px;
     margin: 25px 0 15px;
-  }
-  .testimonial-section {
-    padding: 65px var(--pad);
-  }
-  .testimonial-track blockquote {
-    font-size: 28px;
-  }
-  .testimonial-section > .eyebrow {
-    font-size: 8px;
   }
   .cta-section {
     padding: 45px var(--pad);
